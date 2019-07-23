@@ -27,12 +27,12 @@
 						</div>
 						<div class="user">
 							<div class="avatar">
-								<img src="data/avatars/" {{-- $theUser['avatar']; --}} alt="imagen usuario" class="avatarUser">
+								<img src="data/avatars/" {{Auth::user()->avatar}} alt="imagen usuario" class="avatarUser">
 							</div>
 							<div class="info">
-								<h3> {{-- $theUser['name']; --}}</h3>
+								<h3> {{Auth::user()->name}} </h3>
 								<p><i class="fa fa-map-marker" aria-hidden="true"></i> ¿Dónde estás ahora? -   <i class="fa fa-globe"></i> País de Residencia</p>
-								<p><i class="fa fa-flag" aria-hidden="true"></i> {{-- $theUser['country']; --}} <i class="fa fa-bolt" aria-hidden="true"></i>      Idiomas</p>
+								<p><i class="fa fa-flag" aria-hidden="true"></i> {{Auth::user()->country}} <i class="fa fa-bolt" aria-hidden="true"></i>      Idiomas</p>
 								<a href="#Editar" class="modal-link"> Editar Perfil </a>
 							</div>
 						</div>
