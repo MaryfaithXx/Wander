@@ -24,7 +24,7 @@
 				{{-- require_once("login.php"); --}}
 				{{--  else:  --}}
 				<div class="col-2">
-					<img class="nav-avatar" src="/storage/avatars/ {{Auth::user()->avatar}}" width=100>
+					<img class="nav-avatar" src="/storage/avatars/{{Auth::user()->avatar}}" width=100>
 				</div>
 				<div class="col-2">
 					<div class="user-menu">
