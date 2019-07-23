@@ -27,7 +27,7 @@
 						</div>
 						<div class="user">
 							<div class="avatar">
-								<img src="data/avatars/" {{Auth::user()->avatar}} alt="imagen usuario" class="avatarUser">
+								<img src="/storage/avatars/{{Auth::user()->avatar}}" alt="imagen usuario" class="avatarUser">
 							</div>
 							<div class="info">
 								<h3> {{Auth::user()->name}} </h3>

@@ -5,22 +5,22 @@
 			<div class="row">
 				<div class="col-12 col-md-4">
 					<ul class="footer-list">
-						<li><a href="#">Quiénes somos</a></li>
-						<li><a href="#">Contacto</a></li>
-						<li><a href="#">Trabaje con nosotros</a></li>
+						<li><a href="{{ route('underconstruction') }}">Quiénes somos</a></li>
+						<li><a href="{{ route('underconstruction') }}">Contacto</a></li>
+						<li><a href="{{ route('underconstruction') }}">Trabaje con nosotros</a></li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-4">
 					<ul class="footer-list">
-						<li><a href="index.php">Inicio</a></li>
-						<li><a href="profile.php">Mi perfil</a></li>
-						<li><a href="faq.php">Preguntas frecuentes</a></li>
+						<li><a href="{{ route('index') }}">Inicio</a></li>
+						<li><a href="{{ route('profile') }}">Mi perfil</a></li>
+						<li><a href="{{ route('faq') }}">Preguntas frecuentes</a></li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-4">
 					<ul class="footer-list">
-						<li><a href="#">Eventos</a></li>
-						<li><a href="#">Destinos</a></li>
+						<li><a href="{{ route('underconstruction') }}">Eventos</a></li>
+						<li><a href="{{ route('underconstruction') }}">Destinos</a></li>
 					</ul>
 				</div>
 			</div>

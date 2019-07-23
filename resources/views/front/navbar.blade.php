@@ -6,23 +6,18 @@
 					<img class="iso" src="images/wander-iso.png" alt="wander isotype"/>
 					<a href= "index.php"><img class="logo" src="images/wander-logo.png" alt="wander logotype"/></a>
 				</div>
-				<!-- Verificar si el usuario NO estรก logueado para mostrar los enlaces Register y Login -->
-        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-
+				<!-- Verificar si el usuario NO estรก logueado (Guest) para mostrar los enlaces Register y Login -->
+				@guest
 				<div class="col-2">
-					<a href="register.php" class="register-link">Registrarme</a>
+					<a href="{{ route('register') }}" class="register-link">Registrarme</a>
 				</div>
 				<div class="col-2">
-					<a id="login-button" href="#">Iniciar sesion</a>
+					<a id="login-button" href="{{ route('login') }}">Iniciar sesion</a>
 				</div>
 
-        @endif
+				@endguest
 
-				{{-- require_once("login.php"); --}}
-				{{--  else:  --}}
+				@auth
 				<div class="col-2">
 					<img class="nav-avatar" src="/storage/avatars/{{Auth::user()->avatar}}" width=100>
 				</div>
@@ -30,16 +25,19 @@
 					<div class="user-menu">
 						<a class="dropdown-button">{{Auth::user()->name}} <i class="fa fa-caret-down"></i></a>
 							<div class="dropdown-content">
-							  <a href="profile.php">Mi perfil</a>
-							  <a href="logout.php">Salir</a>
+							  <a href="{{ route('profile') }}">Mi perfil</a>
+							  <a href="{{ route('logout') }}"
+							  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Salir</a>	 
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 							</div>
 					</div>
 				</div>
-				{{-- endif --}}
+				@endauth
 			</div>
 		</div>
 
 	</header>
 	<!-- /main-header -->
-
-	{{--reemplazar la lógica de validación de logueo y link a formulario de login.--}}

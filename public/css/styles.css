@@ -455,6 +455,21 @@ header a, footer a {
 	background-color: #f8e5e5 !important;
 }
 
+/*dar estilo a la página en construccion*/
+.construction {
+	text-align: center;
+	color: #000000;
+	font-size: 1em;
+	padding: 30px 15%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.construction img {
+	width: 20vw;
+	
+}
+
 /* styles temporales - prueba de estructura */
 /* [class*=col], .container { */
 	/* border: dashed 1px red; */

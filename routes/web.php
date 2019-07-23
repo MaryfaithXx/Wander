@@ -12,21 +12,32 @@
 */
 
 
-Route::get('/profile', function () {
-    return view('front.profile');
-});
-
-Route::get('/register', function () {
-    return view('auth.register');
-});
+Route::get('/', function () {
+    return view('front.index');
+})->name('index');
 
 Route::get('/faq', function () {
     return view('front.faq');
-});
+})->name('faq');
+
+/* Declaro las rutas que serán visibles sólo para los usuarios logueados */
+
+Route::middleware('auth')->group(function() {
+	
+Route::get('/profile', function () {
+    return view('front.profile');
+})->name('profile');
 
 Route::get('/connections', function () {
     return view('front.connections');
+})->name('connections');
+
 });
+
+Route::get('/underconstruction', function () {
+    return view('front.underconstruction');
+})->name('underconstruction');
+
 
 Auth::routes();
 
