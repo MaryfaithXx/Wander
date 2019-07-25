@@ -20,10 +20,14 @@ Route::get('/faq', function () {
     return view('front.faq');
 })->name('faq');
 
+Route::get('/events', function () {
+    return view('front.events');
+})->name('events');
+
 /* Declaro las rutas que serán visibles sólo para los usuarios logueados */
 
 Route::middleware('auth')->group(function() {
-	
+
 Route::get('/profile', function () {
     return view('front.profile');
 })->name('profile');
