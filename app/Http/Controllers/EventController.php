@@ -71,7 +71,7 @@ class EventController extends Controller
 		// $event = Event::create($request->except('_token'));
 		$event = new Event; // Objeto de tipo Event Vacio
 		// Asocio atributos con valores
-		$event->neme = $request->input('name');
+		$event->name = $request->input('name');
 		$event->details = $request->input('details');
 		$event->date = $request->input('date');
 		$event->city = $request->input('city');

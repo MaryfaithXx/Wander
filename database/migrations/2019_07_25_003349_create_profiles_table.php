@@ -18,6 +18,8 @@ class CreateProfilesTable extends Migration
             $table->string('location');
             $table->string('languages_spoken');
             $table->string('visited_cities');
+			$table->unsignedBigInteger('user_id')->nullable();
+			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
