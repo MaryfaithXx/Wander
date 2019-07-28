@@ -20,9 +20,12 @@ Route::get('/faq', function () {
     return view('front.faq');
 })->name('faq');
 
-Route::get('/events', function () {
-    return view('front.events');
-})->name('events');
+Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit']);
+
+Route::get('/underconstruction', function () {
+    return view('front.underconstruction');
+})->name('underconstruction');
+
 
 /* Declaro las rutas que serán visibles sólo para los usuarios logueados */
 
@@ -36,12 +39,13 @@ Route::get('/connections', function () {
     return view('front.connections');
 })->name('connections');
 
+Route::get('/events/create', 'EventController@create');
+Route::delete('/events/{id}', 'EventController@destroy');
+Route::get('/events/{id}/edit', 'EventController@edit');
+
 });
 
-Route::get('/underconstruction', function () {
-    return view('front.underconstruction');
-})->name('underconstruction');
-
+/* Rutas de Registro y Login */
 
 Auth::routes();
 

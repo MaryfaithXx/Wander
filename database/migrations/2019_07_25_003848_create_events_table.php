@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->string('details');
-            $table->timedate('date')
+            $table->datetime('date');
             $table->timestamps();
         });
     }

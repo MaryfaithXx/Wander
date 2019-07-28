@@ -32,22 +32,23 @@
 		<section class="search-bar">
 			<div class="container-fluid">
 				<h3>Busqueda por destino</h3>
-				<form class="search-form" action="#">
+				<form class="search-form" action="/events" role="search">
+				@csrf
 					<div class="row">
 					  <div class="col-12 col-md-3">
 						  <label for="destination">Destino:</label>
 						  <br>
-						  <input type="text" id="destination" placeholder="City/Country" name="destination">
+						  <input type="text" class="form-control" id="destination" placeholder="City/Country" name="destination">
 					  </div>
 					  <div class="col-12 col-md-3">
 						  <label for="date">Desde:</label>
 						  <br>
-						  <input type="date" id="from-date" placeholder="dd/mm/yyyy" name="from-date">
+						  <input type="date" class="form-control" id="from-date" placeholder="dd/mm/yyyy" name="from-date">
 					  </div>
 					  <div class="col-12 col-md-3">
 						<label for="date">Hasta:</label>
 						<br>
-						<input type="date" id="to-date" placeholder="dd/mm/yyyy" name="to-date">
+						<input type="date"  id="to-date" placeholder="dd/mm/yyyy" name="to-date">
 					  </div>
 					  <div class="col-12 col-md-3">
 					  <br>

@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-8">
 					<img class="iso" src="images/wander-iso.png" alt="wander isotype"/>
-					<a href= "index.php"><img class="logo" src="images/wander-logo.png" alt="wander logotype"/></a>
+					<a href= "{{ route('index') }}"><img class="logo" src="images/wander-logo.png" alt="wander logotype"/></a>
 				</div>
 				<!-- Verificar si el usuario NO estรก logueado (Guest) para mostrar los enlaces Register y Login -->
 				@guest
