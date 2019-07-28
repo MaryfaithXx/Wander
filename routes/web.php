@@ -43,6 +43,10 @@ Route::get('/events/create', 'EventController@create');
 Route::delete('/events/{id}', 'EventController@destroy');
 Route::get('/events/{id}/edit', 'EventController@edit');
 
+Route::get('/Posts/create', 'PostController@create');
+Route::delete('/Posts/{id}', 'PostController@destroy');
+Route::get('/Posts/{id}/edit', 'PostController@edit');
+
 });
 
 /* Rutas de Registro y Login */

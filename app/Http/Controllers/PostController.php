@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class PostController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+      $Posts = Post::all();
+			return view('front.Post.index', compact('posts'));
+
     }
 
     /**
@@ -45,7 +49,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $thePost = Post::find($id);
+			return view('front.Post.show', compact('thePost'));
+    }
+
     }
 
     /**
@@ -81,4 +88,15 @@ class PostController extends Controller
     {
         //
     }
+
+    public function search()
+		{
+			return view('front.Post.search');
+		}
+		public function result(Request $request)
+		{
+			$Posts = Post::where('first_name', 'LIKE', '%' . $request->word . '%')->get();
+			return view('front.Post.result', compact('posts'));
+		}
+}
 }
