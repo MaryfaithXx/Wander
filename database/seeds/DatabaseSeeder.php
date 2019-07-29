@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
 		foreach ($users as $oneUser) {				
 			$oneUser->events()->sync($events->random(4)); //relación de N:M
 			factory(App\Profile::class)->times(1)->create(['user_id' => $oneUser->id,]); //relación de 1:1
-			$oneUser->posts()->associate($users->random(8)->first()->id);
+			//$oneUser->posts()->associate($posts->random(8)->first()->id); https://laracasts.com/discuss/channels/eloquent/eloquent-sync-associate?page=1
+			factory(App\Post::class)->times(8)->create(['user_id' => $oneUser->id,]); //relacion de 1:N	
 			}
 	
     }
