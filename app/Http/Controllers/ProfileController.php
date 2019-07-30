@@ -45,7 +45,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+         $theProfile = Profile::find($id);
+		return view('front.Profile.show', compact('theProfile'));
     }
 
     /**

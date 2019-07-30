@@ -1,11 +1,14 @@
-@extends('layouts.app')
+@extends('front.template')
 
-@section('content')
+@section('pageTitle', 'Registro')
+
+@section('mainSection')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Formulario de Registro') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">

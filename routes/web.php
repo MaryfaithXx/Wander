@@ -31,13 +31,18 @@ Route::get('/Posts/create', 'PostController@create');
 Route::delete('/Posts/{id}', 'PostController@destroy');
 Route::get('/Posts/{id}/edit', 'PostController@edit');
 
+Route::get('/Profile/create', 'ProfileController@create');
+Route::delete('/Profile/{id}', 'PostController@destroy');
+Route::get('/Profile/{id}/edit', 'PostController@edit');
 });
 
 /* Rutas públicas*/
 
 Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit']);
 
-Route::resource('/posts', 'EventController')->except(['create', 'destroy', 'edit']);
+Route::resource('/posts', 'PostController')->except(['create', 'destroy', 'edit']);
+
+/* Route::resource('/profile', 'ProfileController')->except(['create', 'destroy', 'edit']); */
 
 Route::get('/', function () {
     return view('front.index');
