@@ -11,22 +11,6 @@
 |
 */
 
-
-Route::get('/', function () {
-    return view('front.index');
-})->name('index');
-
-Route::get('/faq', function () {
-    return view('front.faq');
-})->name('faq');
-
-Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit']);
-
-Route::get('/underconstruction', function () {
-    return view('front.underconstruction');
-})->name('underconstruction');
-
-
 /* Declaro las rutas que serán visibles sólo para los usuarios logueados */
 
 Route::middleware('auth')->group(function() {
@@ -48,6 +32,24 @@ Route::delete('/Posts/{id}', 'PostController@destroy');
 Route::get('/Posts/{id}/edit', 'PostController@edit');
 
 });
+
+/* Rutas públicas*/
+
+Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit']);
+
+Route::resource('/posts', 'EventController')->except(['create', 'destroy', 'edit']);
+
+Route::get('/', function () {
+    return view('front.index');
+})->name('index');
+
+Route::get('/faq', function () {
+    return view('front.faq');
+})->name('faq');
+
+Route::get('/underconstruction', function () {
+    return view('front.underconstruction');
+})->name('underconstruction');
 
 /* Rutas de Registro y Login */
 

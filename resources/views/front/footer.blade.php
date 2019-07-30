@@ -1,6 +1,6 @@
 <!-- main-footer -->
 	<footer class="main-footer">
-	<img src="images/skyline-banner.png" alt="skyline banner">
+	<img src="/images/skyline-banner.png" alt="skyline banner">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12 col-md-4">
@@ -26,7 +26,7 @@
 			</div>
 			<div class="row">
 				<div class="col-8 copyright">
-					<img class="iso" src="images/wander-iso.png" alt="wander isotype"/>
+					<img class="iso" src="/images/wander-iso.png" alt="wander isotype"/>
 					<p>© derechos reservados</p>
 				</div>
 				<div class="col-4 social-links">

@@ -3,8 +3,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-8">
-					<img class="iso" src="images/wander-iso.png" alt="wander isotype"/>
-					<a href= "{{ route('index') }}"><img class="logo" src="images/wander-logo.png" alt="wander logotype"/></a>
+					<img class="iso" src="/images/wander-iso.png" alt="wander isotype"/>
+					<a href= "{{ route('index') }}"><img class="logo" src="/images/wander-logo.png" alt="wander logotype"/></a>
 				</div>
 				<!-- Verificar si el usuario NO estรก logueado (Guest) para mostrar los enlaces Register y Login -->
 				@guest
@@ -28,10 +28,10 @@
 							  <a href="{{ route('profile') }}">Mi perfil</a>
 							  <a href="{{ route('logout') }}"
 							  onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Salir</a>	 
+                document.getElementById('logout-form').submit();">Salir</a>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                @csrf
+                </form>
 							</div>
 					</div>
 				</div>

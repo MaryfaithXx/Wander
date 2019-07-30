@@ -53,7 +53,6 @@ class PostController extends Controller
 			return view('front.Post.show', compact('thePost'));
     }
 
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -98,5 +97,5 @@ class PostController extends Controller
 			$Posts = Post::where('first_name', 'LIKE', '%' . $request->word . '%')->get();
 			return view('front.Post.result', compact('posts'));
 		}
-}
+
 }

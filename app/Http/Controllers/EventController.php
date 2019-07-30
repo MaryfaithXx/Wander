@@ -17,7 +17,7 @@ class EventController extends Controller
   {
       $events = Event::paginate(5);
 	  $totalEvents = count(Event::all());
-	  
+
 			return view('front/Events/index', compact('events', 'totalEvents'));
   }
 
@@ -28,7 +28,7 @@ class EventController extends Controller
    */
   public function create()
   {
-      return view('front.Events.create');
+    return view('front.Events.create');
   }
 
   /**
@@ -101,7 +101,7 @@ class EventController extends Controller
   public function show($id)
   {
 	  $theEvent = Event::find($id);
-			return view('front.Events.show', compact('theEvent'));
+		return view('front.Events.show', compact('theEvent'));
   }
 
   /**
@@ -114,7 +114,7 @@ class EventController extends Controller
   {
       // Busco el Evento
 		$eventToEdit = Event::find($id);
-	
+
 		return view('front.Events.edit', compact('eventToEdit'));
   }
 
@@ -128,7 +128,7 @@ class EventController extends Controller
   public function update(Request $request, $id)
   {
 		$eventToUpdate = Event::find($id);
-		
+
 		$eventToUpdate->name = $request->input('name');
 		$eventToUpdate->details = $request->input('details');
 		$eventToUpdate->date = $request->input('date');
@@ -164,17 +164,17 @@ class EventController extends Controller
 		// Redireccionamos SIEMPRE a una RUTA
 		return redirect('/events');
   }
-  
-  public function search()
+
+    public function search()
 		{
 			return view('front.events.search');
 		}
-		public function result(Request $request)
+
+    public function result(Request $request)
 		{
+      //$user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
 			$events = Event::where('city', 'LIKE', '%' . $request->word . '%')->orWhere('country','LIKE','%' .$request->word . '%')->get();
 			return view('front.events.result', compact('events'));
 		}
-  
-  
-  $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+
 }

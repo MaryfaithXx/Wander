@@ -1,6 +1,6 @@
 @extends('front.template')
 
-@section('pageTitle', 'Detalle del Evento ' . $theEvent['name'])	
+@section('pageTitle', 'Detalle del Evento ' . $theEvent['name'])
 
 @section('mainSection')
 
