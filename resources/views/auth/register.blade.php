@@ -18,8 +18,13 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre y apellido') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+								dataname = "Nombre y apellido">
 
+						<div class="invalid-feedback">
+							Aquí va el error del Nombre y Apellido
+						</div>
+						
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -32,7 +37,12 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de usuario') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username"
+								dataname="Nombre de usuario">
+
+						<div class="invalid-feedback">
+							Aquí va el error del Nombre de usuario
+						</div>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -46,7 +56,12 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
+								dataname="Email">
+
+							<div class="invalid-feedback">
+								Aquí va el error del Email
+							</div>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -60,7 +75,12 @@
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('País de nacimiento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country">
+                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country"
+								dataname="País de nacimiento">
+
+							<div class="invalid-feedback">
+								Aquí va el error del País de nacimiento
+							</div>
 
                                 @error('country')
                                     <span class="invalid-feedback" role="alert">
@@ -74,8 +94,13 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"
+								dataname="Contraseña">
 
+							<div class="invalid-feedback">
+								Aquí va el error de la Contraseña
+							</div>
+							
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -119,4 +144,5 @@
         </div>
     </div>
 </div>
+<script src="/js/registerValidate.js"></script>
 @endsection

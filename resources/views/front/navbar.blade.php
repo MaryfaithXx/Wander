@@ -25,7 +25,7 @@
 					<div class="user-menu">
 						<a class="dropdown-button">{{Auth::user()->name}} <i class="fa fa-caret-down"></i></a>
 							<div class="dropdown-content">
-							  <a href="{{ route('profile') }}">Mi perfil</a>
+							  <a href="{{ '/profile' }}">Mi perfil</a>
 							  <a href="{{ route('logout') }}"
 							  onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Salir</a>

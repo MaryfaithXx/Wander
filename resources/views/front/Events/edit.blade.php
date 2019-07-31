@@ -3,7 +3,7 @@
 @section('pageTitle', 'Eventos')
 
 @section('mainSection')
-
+<div class="container">
 	<h2>Formulario para editar el evento  {{ $eventToEdit->name }}</h2>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))
@@ -121,5 +121,5 @@
 			</div>
 		</div>
 	</form>
-
+</div>
 @endsection

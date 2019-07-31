@@ -13,13 +13,13 @@
 				<div class="col-12 col-md-4">
 					<ul class="footer-list">
 						<li><a href="{{ route('index') }}">Inicio</a></li>
-						<li><a href="{{ route('profile') }}">Mi perfil</a></li>
+						<li><a href="{{ '/profile' }}">Mi perfil</a></li>
 						<li><a href="{{ route('faq') }}">Preguntas frecuentes</a></li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-4">
 					<ul class="footer-list">
-						<li><a href="{{ route('underconstruction') }}">Eventos</a></li>
+						<li><a href="{{ '/events' }}">Eventos</a></li>
 						<li><a href="{{ route('underconstruction') }}">Destinos</a></li>
 					</ul>
 				</div>
