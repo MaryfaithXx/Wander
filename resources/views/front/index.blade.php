@@ -116,5 +116,5 @@
 		</div>
 
 		<!-- /featured events -->
-
+    <script src="/js/fetch.js"></script>
 		@endsection
