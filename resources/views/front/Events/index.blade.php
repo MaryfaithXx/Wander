@@ -11,7 +11,7 @@
 			
 			<div class="col-12">
 				<div class="col-2">
-					<a id="login-button" href="{{ redirect('/events/create') }}">Crea tu Evento</a>
+					<a id="login-button" href="{{ route('createEvent') }}">Crea tu Evento</a>
 				</div>
 			</div>
 			<ul class="timeline">

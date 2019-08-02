@@ -15,10 +15,11 @@ class EventController extends Controller
    */
   public function index()
   {
-      $events = Event::paginate(5);
-	  $totalEvents = count(Event::all());
+    $events = Event::paginate(5);
+	$totalEvents = count(Event::all());
 
-			return view('front/Events/index', compact('events', 'totalEvents'));
+	return view('front/Events/index', compact('events', 'totalEvents'));
+	
   }
 
   /**
@@ -28,7 +29,7 @@ class EventController extends Controller
    */
   public function create()
   {
-    return view('front.Events.create');
+	return view('front.Events.create');
   }
 
   /**
@@ -159,7 +160,7 @@ class EventController extends Controller
   {
       // Busco el Evento
 		$eventToDelete = Event::find($id);
-		// La borro
+		// Lo borro
 		$eventToDelete->delete();
 		// Redireccionamos SIEMPRE a una RUTA
 		return redirect('/events');

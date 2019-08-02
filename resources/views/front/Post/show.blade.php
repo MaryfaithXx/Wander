@@ -9,12 +9,12 @@
 	<div class="content">
 		<img src="/storage/post-images/{{ $thePost['image'] }}" style="width: 200px">
 		<h3>{{ $thePost['title'] }} </h3>
-		<li> {{ $thePost['details'] }} </li>
+		<p> {{ $thePost['details'] }} </p>
 		<div class="col-12">
 			<form action="/posts/{{ $thePost->id }}" method="post">
 			@csrf
 			{{ method_field('delete') }}
-			<a href="/posts/{{ $thePostt->id }}/edit" class="btn btn-info">Editar Post</a>
+			<a href="/posts/{{ $thePost->id }}/edit" class="btn btn-info">Editar Post</a>
 			<button type="submit" class="btn btn-danger">BORRAR</button>
 			</form>
 		</div>

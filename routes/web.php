@@ -19,21 +19,21 @@ Route::get('/connections', function () {
     return view('front.connections');
 })->name('connections');
 
-Route::get('/events/create', 'EventController@create');
+Route::get('/events/create', 'EventController@create')->name('createEvent');
 Route::delete('/events/{id}', 'EventController@destroy');
 Route::get('/events/{id}/edit', 'EventController@edit');
 
-Route::get('/Posts/create', 'PostController@create');
-Route::delete('/Posts/{id}', 'PostController@destroy');
-Route::get('/Posts/{id}/edit', 'PostController@edit');
+Route::get('/posts/create', 'PostController@create')->name('createPost');
+Route::delete('/posts/{id}', 'PostController@destroy');
+Route::get('/posts/{id}/edit', 'PostController@edit');
 
-Route::get('/Profile/create', 'ProfileController@create');
-Route::delete('/Profile/{id}', 'ProfileController@destroy');
-Route::get('/Profile/{id}/edit', 'ProfileController@edit');
+Route::get('/profile/create', 'ProfileController@create');
+Route::delete('/profile/{id}', 'ProfileController@destroy');
+Route::get('/profile/{id}/edit', 'ProfileController@edit');
 
-Route::get('/Group/create', 'GroupController@create');
-Route::delete('/Group/{id}', 'GroupController@destroy');
-Route::get('/Group/{id}/edit', 'GroupController@edit');
+Route::get('/group/create', 'GroupController@create');
+Route::delete('/group/{id}', 'GroupController@destroy');
+Route::get('/group/{id}/edit', 'GroupController@edit');
 });
 
 /* Rutas públicas*/

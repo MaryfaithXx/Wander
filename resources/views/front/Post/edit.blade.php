@@ -3,7 +3,7 @@
 @section('pageTitle', 'Posts')
 
 @section('mainSection')
-
+<div class="container">
 	<h2>Formulario para editar un Post  {{ $postToEdit->title}}</h2>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))
@@ -42,7 +42,7 @@
 					<input
 						type="text"
 						name="details"
-						value="{{ old('details', $eventToEdit->details) }}"
+						value="{{ old('details', $postToEdit->details) }}"
 						class="form-control"
 					>
 					@if ($errors->has('details'))
@@ -70,5 +70,5 @@
 			</div>
 		</div>
 	</form>
-
+</div>
 @endsection

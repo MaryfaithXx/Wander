@@ -1,6 +1,6 @@
 @extends('front.template')
 
-@section('pageTitle', 'Detalle del Usuario ' . $theUser['name'])
+@section('pageTitle', 'Detalle del Usuario ' . ''{{--$theUser['name']--}})
 
 @section('mainSection')
 
@@ -15,13 +15,12 @@
 						</div>
 						<div class="user">
 							<div class="avatar">
-								<img src="/storage/avatars/{{ $theUser['avatar'] }}" alt="imagen usuario" class="avatarUser">
+								<img src="/storage/avatars/{{-- $theUser['avatar'] --}}" alt="imagen usuario" class="avatarUser">
 							</div>
 							<div class="info">
-								<h3> {{ $theUser['name'] }} </h3>
-								<p><i class="fa fa-map-marker" aria-hidden="true"></i> ¿Dónde estás ahora? -   <i class="fa fa-globe"></i> País de Residencia</p>
-								<p><i class="fa fa-flag" aria-hidden="true"></i> {{ $theUser['country']}} <i class="fa fa-bolt" aria-hidden="true"></i>      Idiomas</p>
-								<a href="#Editar" class="modal-link"> Editar Perfil </a>
+								<h3> {{-- $theUser['name'] --}} </h3>
+								<p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $theProfile['location'] }}</p>
+								<p><i class="fa fa-flag" aria-hidden="true"></i> {{-- $theUser['country']--}} <i class="fa fa-bolt" aria-hidden="true"></i> {{ $theProfile['languages_spoken'] }}</p>
 							</div>
 						</div>
 					</div>
@@ -66,7 +65,7 @@
 					<br>
 					<div class="rating">
 						<div class="col-12">
-							<form action="/user/{{ $theUser->id }}" method="post">
+							<form action="/user/{{-- $theUser->id --}}" method="post">
 							@csrf
 							<button type="submit" class="btn btn-info">Seguir a este perfil</button>
 							</form>
