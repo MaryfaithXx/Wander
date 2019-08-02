@@ -75,8 +75,16 @@
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('País de nacimiento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country"
-								dataname="País de nacimiento">
+							
+								<select	class="form-control @error('country') is-invalid @enderror"
+										name="country"
+										id="country"
+										value="{{ old('country') }}"
+										required autocomplete="country"
+										dataname="País de nacimiento"
+										>
+									<option value="">Elegí un país</option>
+								</select>
 
 							<div class="invalid-feedback">
 								Aquí va el error del País de nacimiento
@@ -89,6 +97,36 @@
                                 @enderror
                             </div>
                         </div>
+
+{{-- Api de Provincias --}}
+
+						<div class="form-group row" style="display: none;">
+                            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
+
+                             <div class="col-md-6">
+								<select class="form-control @error('state') is-invalid @enderror"
+									name="state"
+									id="state"
+									value="{{ old('state') }}"
+									required autocomplete="state"
+									dataname="Provincia"
+									>
+									<option value="">Elegí una provincia</option>
+								</select>
+								
+								<div class="invalid-feedback">
+								Aquí va el error de la Provincia
+								</div>
+                                
+								@error('state')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+{{-- endAPI --}}
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
@@ -144,5 +182,8 @@
         </div>
     </div>
 </div>
+
 <script src="/js/registerValidate.js"></script>
+<script src="/js/fetch.js"></script>
+
 @endsection

@@ -13,10 +13,8 @@ formInputs.pop();
 // Expresión regular para validar formato de email
 var regexEmail = /\S+@\S+\.\S+/;
 
-
 // Expresión regular para validar formato de contraseña
 var regexPassword =/.{6,}DH/;
-
 
 // Objeto literal para verificar si un campo tiene error
 var errorsObj = {};
@@ -76,17 +74,6 @@ formInputs.forEach(function (oneInput) {
 				if (!regexEmail.test(this.value.trim())) {
 					this.classList.add('is-invalid');
 					this.nextElementSibling.innerHTML = 'El formato ingresado no es válido';
-					// Si un campo tiene error, creamos una key con el nombre del campo y valor true
-					errorsObj[this.name] = true;
-				}
-			}
-			
-			// Validamos el tipo de dato del campo Country
-			if (this.name === 'country') {
-				// Validamos que el texto insertado NO supere las 100 letras
-				if (this.value.length > 100) {
-					this.classList.add('is-invalid');
-					this.nextElementSibling.innerHTML = 'El País de Nacimiento debe ser inferior a 100 letras';
 					// Si un campo tiene error, creamos una key con el nombre del campo y valor true
 					errorsObj[this.name] = true;
 				}
