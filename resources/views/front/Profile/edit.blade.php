@@ -35,7 +35,7 @@
 					@endif
 				</div>
 			</div>
-			
+
 			<div class="col-6">
 				<div class="form-group">
 					<label>Ciudades Visitadas</label>
@@ -53,8 +53,8 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="row">		
+
+		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
 					<label>Idiomas</label>
@@ -84,6 +84,11 @@
 				</div>
 			</div>
 
+			<div class="col-6" style="display:none;">
+			  <div class="form-group">
+				<input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
+			  </div>
+			</div>
 			<div class="col-12">
 				<button type="submit" class="btn btn-success">ENVIAR</button>
 			</div>

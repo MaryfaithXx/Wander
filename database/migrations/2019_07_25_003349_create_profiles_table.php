@@ -18,9 +18,9 @@ class CreateProfilesTable extends Migration
             $table->string('location')->nullable();
             $table->string('languages_spoken')->nullable();
             $table->string('visited_cities')->nullable();
-			$table->string('image')->nullable();
-			$table->unsignedBigInteger('user_id')->nullable();
-			$table->foreign('user_id')->references('id')->on('users');
+      			$table->string('cover_image')->nullable();
+      			$table->unsignedBigInteger('user_id')->nullable();
+      			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

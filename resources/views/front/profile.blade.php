@@ -11,7 +11,7 @@
 			<div class="col-12 col-md-8">
 				<div class="profile">
 					<div class="cover">
-						<img src="images/coverImage.jpg" class="coverImage">
+						<img src="/storage/cover-images/{{Auth::user()->profiles->cover_image}}" class="coverImage">
 					</div>
 					<div class="user">
 						<div class="avatar">
@@ -19,10 +19,16 @@
 						</div>
 						<div class="info">
 							<h3> {{Auth::user()->name}} </h3>
-							<p><i class="fa fa-map-marker" aria-hidden="true"></i> ¿Dónde estás ahora? -   <i class="fa fa-globe"></i> País de Residencia</p>
-							<p><i class="fa fa-flag" aria-hidden="true"></i> {{Auth::user()->country}} <i class="fa fa-bolt" aria-hidden="true"></i>      Idiomas</p>
-							<a href="/profile/create" class="modal-link"> Crear Perfil </a>
-							<a href="/profile/{{Auth::user()->id}}/edit" class="modal-link"> Editar Perfil </a>
+							<p><i class="fa fa-map-marker" aria-hidden="true"></i> ¿Dónde estás ahora? {{ Auth::user()->profiles->location }}</p>
+							<p><i class="fa fa-flag" aria-hidden="true"></i> País de Residencia {{ Auth::user()->country }} </p>
+							<p><i class="fa fa-bolt" aria-hidden="true"></i> Idiomas {{ Auth::user()->profiles->languages_spoken }}</p>
+							@if (Auth::user()->profiles)
+								<span class="fas fa-user-edit"></span>
+								<a href="/profile/{{Auth::user()->id}}/edit" class="modal-link"> Editar Perfil </a>
+							@else
+								<span class="fas fa-user-edit"></span>
+								<a href="/profile/create" class="modal-link"> Crear Perfil </a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -73,6 +79,18 @@
 					<span class="fa fa-star checked fa-2x"></span>
 					<span class="fa fa-star fa-2x"></span>
 				</div>
+
+				<div class="col-12">
+					<div class="col-8">
+						<a id="login-button" href="{{ route('createPost') }}">Crea tu Posteo</a>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="col-8">
+						<a id="login-button" href="{{ route('createEvent') }}">Crea tu Evento</a>
+					</div>
+				</div>
 			</div>
 			<!--/columna 2-->
 		</div>
@@ -85,19 +103,14 @@
 	<!-- Posteos -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-md-8">
-				<h2 class="tituloPosts">Posts</h2>
+			<div class="col-12 col-md-6">
+				<h2 class="postTitle">Posts</h2>
 
-				<div class="col-12">
-					<div class="col-2">
-						<a id="login-button" href="{{ redirect('/post/create') }}">Crea tu Posteo</a>
-					</div>
-				</div>
 				<ul class="timeline">
 				@foreach ($posts as $post)
 					<div class="container mt-5 mb-5">
 						<div class="row">
-							<div class="col-md-6 offset-md-3">
+							<div class="col-md-6">
 								<ul class="timeline">
 									<li><img src="/storage/post-images/{{ $post['image'] }}" style="width: 200px"></li>
 									<h4><strong><a target="_blank" href="#">{{ $post ['title'] }}</a></strong></h4>
@@ -121,23 +134,42 @@
 			</div>
 			<!--/Posteos-->
 
-			<!-- Grupos-->
+			<!-- Eventos-->
 
-			<div class="col-12 col-md-4">
-				<h2 class="tituloEventos"> Grupos </h2>
-				<div class="row">
-					<div class="col-12">
-						<img class="groups-image" src="images/asian-food.jpg" alt="asian food">
-						<span class="tile-label">COMIDA ASIÁTICA</span>
+					<div class="col-12 col-md-6">
+						<h2 class="postTitle">Eventos</h2>
+
+						<ul class="timeline">
+						@foreach ($events as $event)
+							<div class="container mt-5 mb-5">
+								<div class="row">
+									<div class="col-md-6">
+										<ul class="timeline">
+											<li><img src="/storage/event-images/{{ $event['image'] }}" style="width: 200px"></li>
+											<h4><strong><a target="_blank" href="#">{{ $event['name'] }}</a></strong></h4>
+											<li> {{ $event['city'] }} - {{ $event['country'] }}
+											<span class="float-right">{{ $event['date'] }}</span></li>
+											<br>
+											<li> {{ $event['details'] }} </li>
+											<br>
+											<div class="col-12">
+												<form action="/events/{{ $event->id }}" method="post">
+												@csrf
+												{{ method_field('delete') }}
+												<a href="/events{{ $event->id }}/edit" class="btn btn-info">Editar Evento</a>
+												<button type="submit" class="btn btn-danger">Borrar</button>
+												</form>
+											</div>
+										</ul>
+									</div>
+								</div>
+							</div>
+						@endforeach
+						</ul>
 					</div>
 
-					<div class="col-12">
-						<img class="groups-image" src="images/parachute.jpg" alt="paracaidas">
-						<span class="tile-label">Bautismo Paracaidas 2019</span>
-					</div>
-				</div>
-			</div>
-			<!--/Grupos-->
+
+			<!--/Eventos-->
 
 		</div>
 	</div>

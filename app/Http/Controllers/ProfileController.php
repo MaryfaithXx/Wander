@@ -8,6 +8,10 @@ use App\Profile;
 
 use App\Post;
 
+use App\Event;
+
+use App\User;
+
 class ProfileController extends Controller
 {
     /**
@@ -18,7 +22,8 @@ class ProfileController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('front.profile', compact('posts'));
+        $events = Event::all();
+        return view('front.profile', compact('posts', 'events'));
     }
 
     /**
@@ -77,8 +82,10 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-         $theProfile = Profile::find($id);
-		return view('front.Profile.show', compact('theProfile'));
+        $theUser = User::find($id);
+
+        $theProfile = Profile::find($id);
+		return view('front.Profile.show', compact('theProfile', 'theUser'));
     }
 
     /**
@@ -140,7 +147,7 @@ class ProfileController extends Controller
 		// Redireccionamos SIEMPRE a una RUTA
 		return redirect('/profile');
     }
-	
+
 	public function search()
 		{
 			return view('front.Profile.search');
@@ -150,5 +157,5 @@ class ProfileController extends Controller
 			$profiles = Profile::where('user_id', 'LIKE', '%' . $request->word . '%')->get();
 			return view('front.Profile.result', compact('profiles'));
 		}
-		
+
 }
