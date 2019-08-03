@@ -78,7 +78,7 @@ formInputs.forEach(function (oneInput) {
 					errorsObj[this.name] = true;
 				}
 			}
-			
+
 			// Validamos el campo Password para verificar que tenga un formato valido
 			if (this.name === 'password') {
 				if (!regexPassword.test(this.value.trim())) {
@@ -88,10 +88,21 @@ formInputs.forEach(function (oneInput) {
 					errorsObj[this.name] = true;
 				}
 			}
-			
+
+			if (this.name === 'avatar') {
+				var imagenSubida = this.value;
+				var extension = imagenSubida.substring(imagenSubida.lastIndexOf('.') + 1).toLowerCase();
+				console.log(extension);
+
+				if(extension != 'jpg' && extension != 'jpeg' && extension != 'png' ) {
+					this.classList.add('is-invalid');
+	        this.nextElementSibling.innerHTML = 'La extension no es valida, debe ser jpg, jpeg, png';
+	        errorsObj[this.name] = true;
+        }
+    	}
 		}
 	});
-	
+
 });
 
 // Si tratan de enviar el formulario
@@ -107,7 +118,7 @@ theForm.addEventListener('submit', function (event) {
 			input.nextElementSibling.innerHTML = 'El campo <b>' + input.getAttribute('dataname') + '</b> es obligatorio';
 		}
 	});
-	
+
 /* Debug de errores en Registro
 	console.log('Campos con errores:', errorsObj);
 	console.log('Cantidad de campos con errores:', Object.keys(errorsObj).length); */

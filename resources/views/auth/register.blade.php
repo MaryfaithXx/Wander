@@ -24,7 +24,7 @@
 						<div class="invalid-feedback">
 							Aquí va el error del Nombre y Apellido
 						</div>
-						
+
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -70,12 +70,12 @@
                                 @enderror
                             </div>
                         </div>
-						
+
 						<div class="form-group row">
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('País de nacimiento') }}</label>
 
                             <div class="col-md-6">
-							
+
 								<select	class="form-control @error('country') is-invalid @enderror"
 										name="country"
 										id="country"
@@ -113,11 +113,11 @@
 									>
 									<option value="">Elegí una provincia</option>
 								</select>
-								
+
 								<div class="invalid-feedback">
 								Aquí va el error de la Provincia
 								</div>
-                                
+
 								@error('state')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -138,7 +138,7 @@
 							<div class="invalid-feedback">
 								Aquí va el error de la Contraseña
 							</div>
-							
+
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -151,15 +151,23 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" dataname="confirmar contraseña">
+
+                                <div class="invalid-feedback">
+                  								Aquí va el error de la Contraseña
+                  							</div>
                             </div>
                         </div>
-						
+
 						<div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Imagen de perfil') }}</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" dataname="imagen">
+
+                                <div class="invalid-feedback">
+                  								Aquí va el error de la Imagen
+                  							</div>
 
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">
