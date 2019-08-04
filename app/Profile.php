@@ -12,7 +12,7 @@ class Profile extends Model
    * @var array
    */
   protected $fillable = [
-      'location', 'languages_spoken', 'visited_cities'
+      'location', 'languages_spoken', 'visited_cities', 'user_id'
   ];
 
   /**

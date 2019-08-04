@@ -52,7 +52,7 @@
 							<span class= "label"> 14 <br> EVENTOS</span>
 						</div>
 						<div class="col-3 column">
-							<a href="connections.php">
+							<a href="{{ route('connections') }}">
 								<img src="images/conexiones.png" alt="conexiones">
 									<span class= "label"> 120 CONEXIONES</span>
 							</a>
@@ -108,6 +108,7 @@
 
 				<ul class="timeline">
 				@foreach ($posts as $post)
+					@if ($post['user_id'] == Auth::user()->id)
 					<div class="container mt-5 mb-5">
 						<div class="row">
 							<div class="col-md-6">
@@ -121,14 +122,15 @@
 										<form action="/posts/{{ $post->id }}" method="post">
 										@csrf
 										{{ method_field('delete') }}
-										<a href="/posts/{{ $post->id }}/edit" class="btn btn-info">Editar Posteo</a>
-										<button type="submit" class="btn btn-danger">Borrar</button>
+										<a href="/posts/{{ $post->id }}/edit"><i class="fas fa-pen-square" style="font-size:3em"></i></a>
+										<button type="submit" class="delete-icon"><i class="fas fa-trash" style="font-size:2.6em"></i></button>
 										</form>
 									</div>
 								</ul>
 							</div>
 						</div>
 					</div>
+					@endif
 				@endforeach
 				</ul>
 			</div>
@@ -141,6 +143,7 @@
 
 						<ul class="timeline">
 						@foreach ($events as $event)
+						{{--@if ($event->users['event_id'] == Auth::user()->id)--}}
 							<div class="container mt-5 mb-5">
 								<div class="row">
 									<div class="col-md-6">
@@ -156,14 +159,15 @@
 												<form action="/events/{{ $event->id }}" method="post">
 												@csrf
 												{{ method_field('delete') }}
-												<a href="/events/{{ $event->id }}/edit" class="btn btn-info">Editar Evento</a>
-												<button type="submit" class="btn btn-danger">Borrar</button>
+												<a href="/events/{{ $event->id }}/edit"><i class="fas fa-pen-square" style="font-size:3em"></i></a>
+												<button type="submit" class="delete-icon"><i class="fas fa-trash" style="font-size:2.6em"></i></button>
 												</form>
 											</div>
 										</ul>
 									</div>
 								</div>
 							</div>
+							{{--@endif--}}
 						@endforeach
 						</ul>
 					</div>

@@ -10,7 +10,7 @@ $factory->define(Event::class, function (Faker $faker) {
 	$filePath = storage_path('app/public/event-images');
 	
     return [
-        'name' => $faker->sentence(10, true),
+        'name' => $faker->sentence(3, true),
 		'city' => $faker->city,
         'country' => $faker->country,
 		'details' => $faker->paragraph(3, true),

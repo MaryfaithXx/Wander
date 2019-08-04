@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+
+use App\Profile;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +56,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'country' => ['required'],
-            'password' => ['required', 'string','confirmed', 'min:5', 'confirmed', 'regex:/DH/'],
+            'password' => ['required', 'string','confirmed', 'min:5', 'regex:/DH/'],
             'avatar' => ['required', 'image'],
           ],[
             'required' => 'El campo :attributes es obligatorio',
@@ -74,7 +77,7 @@ class RegisterController extends Controller
       $profileImageName = uniqid('img-') . '.' . $profileImage->extension();
       $profileImage->storePubliclyAs("public/avatars", $profileImageName);
 
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'username' => $data['username'],
             'email' => $data['email'],
@@ -82,6 +85,16 @@ class RegisterController extends Controller
 			'state' => $data['state'],
             'password' => Hash::make($data['password']),
             'avatar' => $profileImageName
+		]);
+		
+		Profile::create([
+			'user_id' => $user->id,
+			'location' => null,
+			'visited_cities' => null,
+			'languages_spoken' => null,
+			'cover_image' => null,
         ]);
+		
+		return $user;
     }
 }

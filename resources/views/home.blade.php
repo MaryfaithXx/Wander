@@ -116,4 +116,12 @@
 
 		<!-- /featured events -->
 
-		@endsection
+<div>
+@foreach ($featuredEvent as $event)
+<div class="col-6 col-md-3">
+	<img class="tile-image" src="/storage/event-images/{{ $event['image'] }}" alt="tomorrowland">
+	<a style="display: inline-block;" href="/events/{{ $event->name }}" class="tile-label">{{ $event->name }}</a>
+
+</div>
+@endforeach
+@endsection

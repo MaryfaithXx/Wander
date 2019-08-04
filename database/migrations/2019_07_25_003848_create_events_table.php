@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->string('details', 500);
 			$table->datetime('date');
 			$table->string('image');
+			$table->boolean('featured')->nullable();
             $table->timestamps();
         });
     }

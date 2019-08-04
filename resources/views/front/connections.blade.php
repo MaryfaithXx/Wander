@@ -1,17 +1,8 @@
-{{-- require_once("register-login-controller.php"); --}}
-
 	@extends('front.template')
 
 	@section('pageTitle', 'Wander - Connections')
 
 	@section('mainSection')
-
-
-	{{--// Si no estรก logueda la persona la redirijo al login
-if ( !isLogged() ) {
-	header('location: login.php');
-	exit;
-	}--}}
 
 		<!-- search contacts -->
 		<section class="people-search">

@@ -175,9 +175,15 @@ class EventController extends Controller
 
     public function result(Request $request)
 		{
-      //$user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-			$events = Event::where('city', 'LIKE', '%' . $request->word . '%')->orWhere('country','LIKE','%' .$request->word . '%')->get();
-			return view('front.events.result', compact('events'));
+			$searchWord = $request->word;
+			
+			$eventsResult = Event::where('city', 'LIKE', '%' . $request->word . '%')->orWhere('country','LIKE','%' .$request->word . '%')->get();
+			return view('front.events.result', compact('eventsResult', 'searchWord'));
 		}
-
+		
+	public function featured(Request $request)
+		{
+			$featuredEvent = Event::where('featured', 'LIKE', '%' . '1' . '%')->get();
+			return view('front.index', compact('featuredEvent'));
+		}
 }

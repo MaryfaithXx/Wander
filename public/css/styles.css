@@ -187,17 +187,18 @@ header a, footer a {
 /*dar estilo al carousel*/
 .carousel {
 	text-align: center;
-	background-image: url(../images/beach-group.jpg);
-	background-size: cover;
 	color: #f1f1f1;
 	text-shadow: 2px 2px 2px #000;
-	padding: 30px 15%;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
 
 .carousel p {
 	font-size: 1.2em;
+}
+
+.carousel img {
+	height: 500px;
 }
 
 
@@ -219,7 +220,7 @@ header a, footer a {
 .submit-button {
 	background-color: #fa255e;
 	border-style: none;
-	padding: 4px 15px;
+	padding: 9px 15px;
 	border-radius: 5px;
 }
 
@@ -492,7 +493,11 @@ header a, footer a {
 
 }
 
-/* styles temporales - prueba de estructura */
-/* [class*=col], .container { */
+.delete-icon {
+	border:none;
+	background-color: #fff;
+}
+/* styles temporales - prueba de estructura*/
+/*[class*=col], .container { */
 	/* border: dashed 1px red; */
-/* } */
+/*} */

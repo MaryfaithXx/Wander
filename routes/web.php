@@ -22,6 +22,7 @@ Route::get('/connections', function () {
 Route::get('/events/create', 'EventController@create')->name('createEvent');
 Route::delete('/events/{id}', 'EventController@destroy');
 Route::get('/events/{id}/edit', 'EventController@edit');
+Route::get('/events/result/', 'EventController@result');
 
 Route::get('/posts/create', 'PostController@create')->name('createPost');
 Route::delete('/posts/{id}', 'PostController@destroy');
@@ -38,7 +39,7 @@ Route::get('/group/{id}/edit', 'GroupController@edit');
 
 /* Rutas públicas*/
 
-Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit']);
+Route::resource('/events', 'EventController')->except(['create', 'destroy', 'edit', 'result']);
 
 Route::resource('/posts', 'PostController')->except(['create', 'destroy', 'edit']);
 
@@ -46,9 +47,7 @@ Route::resource('/profile', 'ProfileController')->except(['create', 'destroy', '
 
 Route::resource('/groups', 'GroupController')->except(['create', 'destroy', 'edit']);
 
-Route::get('/', function () {
-    return view('front.index');
-})->name('index');
+Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/faq', function () {
     return view('front.faq');

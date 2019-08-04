@@ -14,7 +14,7 @@ formInputs.pop();
 var regexEmail = /\S+@\S+\.\S+/;
 
 // Expresión regular para validar formato de contraseña
-var regexPassword =/.{6,}DH/;
+var regexPassword =/.{5,}DH/;
 
 // Objeto literal para verificar si un campo tiene error
 var errorsObj = {};

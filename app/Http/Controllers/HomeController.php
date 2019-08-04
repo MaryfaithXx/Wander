@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Event;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
+		$featuredEvent = Event::where('featured', 'LIKE', '%' . '1' . '%')->get();
+		
+		return view('home', compact('featuredEvent'));
+	
+	}
 }
