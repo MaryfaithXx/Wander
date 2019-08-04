@@ -14,7 +14,7 @@
 			<form action="/posts/{{ $thePost->id }}" method="post">
 			@csrf
 			{{ method_field('delete') }}
-			<a href="/posts/{{ $thePost->id }}/edit" class="btn btn-info">Editar Post</a>
+			<a href="/posts/{{ $thePost->id }}/edit" class="btn-btn-info">Editar Post</a>
 			<button type="submit" class="btn btn-danger">BORRAR</button>
 			</form>
 		</div>

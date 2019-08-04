@@ -4,7 +4,10 @@
 
 @section('mainSection')
 <div class="container">
+	<br>
+	<br>
 	<h2>Formulario para editar un Post  {{ $postToEdit->title}}</h2>
+	<br>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))
 		<ul>
@@ -20,7 +23,7 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label>Titulo del Post</label>
+					<label><h5>Titulo del Post<h5/></label>
 					<input
 						type="text"
 						name="title"
@@ -38,7 +41,7 @@
 
 			<div class="col-6">
 				<div class="form-group">
-					<label>Post</label>
+					<label><h5>Post<h5/></label>
 					<input
 						type="text"
 						name="details"
@@ -55,7 +58,7 @@
 
 			<div class="col-6">
 				<div class="form-group">
-					<label>Subí una imagen</label>
+					<label><h5>Subí una imagen<h5/></label>
 					<input type="file" name="image" class="form-control">
 					@if ($errors->has('image'))
 						<span class="text-danger">
@@ -66,7 +69,7 @@
 			</div>
 
 			<div class="col-12">
-				<button type="submit" class="btn btn-success">ENVIAR</button>
+				<button type="submit" class="btn-btn-success">ENVIAR</button>
 			</div>
 		</div>
 	</form>

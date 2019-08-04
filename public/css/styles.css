@@ -277,6 +277,31 @@ header a, footer a {
 	color: white;
 }
 
+.btn-btn-success {
+	background-color: #fa255e;
+	border-style: none;
+	padding: 4px 15px;
+	border-radius: 5px;
+	font-size:110%
+
+}
+
+.btn-btn-info {
+	background-color: #fa255e;
+	border-style: none;
+	padding: 6px 12px;
+	font-weight: 400;
+  text-align: center;
+	border-radius: 5px;
+	border: 1px solid transparent;
+  font-size: .8.99em;
+  line-height: 1.6;
+  border-radius: .25rem;
+}
+
+
+
+
 .invalid-feedback {
 	font-size:110%;
 	color:black;
@@ -464,7 +489,7 @@ header a, footer a {
 
 .construction img {
 	width: 20vw;
-	
+
 }
 
 /* styles temporales - prueba de estructura */

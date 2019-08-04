@@ -138,6 +138,7 @@ class PostController extends Controller
     {
          // Busco el Post
 		$postToDelete = Post::find($id);
+    $postToDelete->users()->delete();
 		// Lo borro
 		$postToDelete->delete();
 		// Redireccionamos SIEMPRE a una RUTA

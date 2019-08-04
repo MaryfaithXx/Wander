@@ -19,7 +19,7 @@ class EventController extends Controller
 	$totalEvents = count(Event::all());
 
 	return view('front/Events/index', compact('events', 'totalEvents'));
-	
+
   }
 
   /**
@@ -160,6 +160,8 @@ class EventController extends Controller
   {
       // Busco el Evento
 		$eventToDelete = Event::find($id);
+    $eventToDelete->users()->detach();
+
 		// Lo borro
 		$eventToDelete->delete();
 		// Redireccionamos SIEMPRE a una RUTA

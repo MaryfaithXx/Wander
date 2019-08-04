@@ -4,7 +4,10 @@
 
 @section('mainSection')
 <div class="container">
+	<br>
+	<br>
 	<h2>Formulario para editar un Perfil</h2>
+	<br>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))
 		<ul>
@@ -20,7 +23,7 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label>Donde estas ahora?</label>
+					<label><h5>Donde estas ahora?<h5/></label>
 					<input
 						type="text"
 						name="location"
@@ -38,7 +41,7 @@
 
 			<div class="col-6">
 				<div class="form-group">
-					<label>Ciudades Visitadas</label>
+					<label><h5>Ciudades Visitadas<h5/></label>
 					<input
 						type="text"
 						name="visited_cities"
@@ -57,7 +60,7 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label>Idiomas</label>
+					<label><h5>Idiomas<h5/></label>
 					<input
 						type="text"
 						name="languages_spoken"
@@ -74,7 +77,7 @@
 
 			<div class="col-6">
 				<div class="form-group">
-					<label>Imagen de fondo</label>
+					<label><h5>Imagen de fondo<h5/></label>
 					<input type="file" name="cover_image" class="form-control">
 					@if ($errors->has('cover_image'))
 						<span class="text-danger">
@@ -90,7 +93,7 @@
 			  </div>
 			</div>
 			<div class="col-12">
-				<button type="submit" class="btn btn-success">ENVIAR</button>
+				<button type="submit" class="btn-btn-success">ENVIAR</button>
 			</div>
 		</div>
 	</form>

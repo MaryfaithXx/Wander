@@ -3,7 +3,11 @@
 @section('pageTitle', 'Crear un Post')
 
 @section('mainSection')
+<div class="container">
+<br>
+<br>
 <h2>Formulario para crear un Post</h2>
+<br>
 {{-- Errores si los hubiera --}}
 @if (count($errors))
   <ul>
@@ -18,7 +22,7 @@
 	<div class="row">
 		<div class="col-6">
 		  <div class="form-group">
-			<label>titulo del Post</label>
+			<label><h5>titulo del Post<h5/></label>
 			<input
 			  type="text"
 			  name="title"
@@ -36,7 +40,7 @@
 
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Detalle del Post</label>
+			<label><h5>Detalle del Post<h5/></label>
 			<input
 			  type="text"
 			  name="details"
@@ -54,7 +58,7 @@
 	<div class="row">
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Subí una imagen</label>
+			<label><h5>Subí una imagen<h5/></label>
 			<input type="file" name="image" class="form-control">
 			@if ($errors->has('image'))
 			  <span class="text-danger">
@@ -69,11 +73,12 @@
 			<input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
 		  </div>
 		</div>
-	</div>	
-	
+	</div>
+
 		<div class="col-12">
-		  <button type="submit" class="btn btn-success">ENVIAR</button>
+		  <button type="submit" class="btn-btn-success">ENVIAR</button>
 		</div>
 
 </form>
+</div>
 @endsection

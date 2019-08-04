@@ -3,7 +3,11 @@
 @section('pageTitle', 'Crear un evento')
 
 @section('mainSection')
+<div class="container">
+	<br>
+	<br>
 <h2>Formulario para crear un evento</h2>
+<br>
 {{-- Errores si los hubiera --}}
 @if (count($errors))
 	<ul>
@@ -18,7 +22,7 @@
 	<div class="row">
 		<div class="col-6">
 			<div class="form-group">
-				<label>Nombre del Evento</label>
+				<label><h5>Nombre del Evento<h5/></label>
 				<input
 					type="text"
 					name="name"
@@ -36,7 +40,7 @@
 
 		<div class="col-6">
 			<div class="form-group">
-				<label>Detalle del Evento</label>
+				<label><h5>Detalle del Evento<h5/></label>
 				<input
 					type="text"
 					name="details"
@@ -54,7 +58,7 @@
 	<div class="row">
 		<div class="col-6">
 			<div class="form-group">
-				<label>Fecha y Hora</label>
+				<label><h5>Fecha y Hora<h5/></label>
 				<input
 					type="datetime-local"
 					name="date"
@@ -71,7 +75,7 @@
 
 		<div class="col-6">
 			<div class="form-group">
-				<label>Ciudad</label>
+				<label><h5>Ciudad<h5/></label>
 				<input
 					type="text"
 					name="city"
@@ -89,7 +93,7 @@
 	<div class="row">
 		<div class="col-6">
 			<div class="form-group">
-				<label>País</label>
+				<label><h5>País<h5/></label>
 				<input
 					type="text"
 					name="country"
@@ -106,7 +110,7 @@
 
 		<div class="col-6">
 			<div class="form-group">
-				<label>Subí una imagen</label>
+				<label><h5>Subí una imagen<h5/></label>
 				<input type="file" name="image" class="form-control">
 				@if ($errors->has('image'))
 					<span class="text-danger">
@@ -117,9 +121,9 @@
 		</div>
 	</div>
 	<div class="col-12">
-		<button type="submit" class="btn btn-success">ENVIAR</button>
+		<button type="submit" class="btn-btn-success">ENVIAR</button>
 	</div>
-	
-</form>
 
+</form>
+</div>
 @endsection

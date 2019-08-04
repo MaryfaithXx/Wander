@@ -118,10 +118,10 @@
 									<li> {{ $post['details'] }} </li>
 									<br>
 									<div class="col-12">
-										<form action="/post/{{ $post->id }}" method="post">
+										<form action="/posts/{{ $post->id }}" method="post">
 										@csrf
 										{{ method_field('delete') }}
-										<a href="/post/{{ $post->id }}/edit" class="btn btn-info">Editar Posteo</a>
+										<a href="/posts/{{ $post->id }}/edit" class="btn btn-info">Editar Posteo</a>
 										<button type="submit" class="btn btn-danger">Borrar</button>
 										</form>
 									</div>
@@ -156,7 +156,7 @@
 												<form action="/events/{{ $event->id }}" method="post">
 												@csrf
 												{{ method_field('delete') }}
-												<a href="/events{{ $event->id }}/edit" class="btn btn-info">Editar Evento</a>
+												<a href="/events/{{ $event->id }}/edit" class="btn btn-info">Editar Evento</a>
 												<button type="submit" class="btn btn-danger">Borrar</button>
 												</form>
 											</div>

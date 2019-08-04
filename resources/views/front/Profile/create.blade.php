@@ -3,7 +3,10 @@
 @section('pageTitle', 'Crear un Perfil')
 
 @section('mainSection')
+<br>
+<br>
 <h2>Formulario para crear un Perfil</h2>
+<br>
 {{-- Errores si los hubiera --}}
 @if (count($errors))
   <ul>
@@ -18,7 +21,7 @@
 	<div class="row">
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Donde estás ahora?</label>
+			<label><h5>Donde estás ahora?<h5/></label>
 			<input
 			  type="text"
 			  name="location"
@@ -36,7 +39,7 @@
 
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Idiomas</label>
+			<label><h5>Idiomas<h5/></label>
 			<input
 			  type="text"
 			  name="languages_spoken"
@@ -54,7 +57,7 @@
 	<div class="row">
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Ciudades</label>
+			<label><h5>Ciudades<h5/></label>
 			<input
 			  type="text"
 			  name="visited_cities"
@@ -70,7 +73,7 @@
 		</div>
 		<div class="col-6">
 		  <div class="form-group">
-			<label>Subí una imagen de fondo</label>
+			<label><h5>Subí una imagen de fondo<h5/></label>
 			<input type="file" name="cover_image" class="form-control">
 			@if ($errors->has('cover_image'))
 			  <span class="text-danger">
@@ -79,7 +82,7 @@
 			@endif
 		  </div>
 		</div>
-	</div>	
+	</div>
 		<div class="col-6" style="display:none;">
 		  <div class="form-group">
 			<input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
