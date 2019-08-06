@@ -105,19 +105,41 @@ formInputs.forEach(function (oneInput) {
 
 });
 
+var countryValue = null;
+var provincesSelect = null;
+
 // Si tratan de enviar el formulario
 theForm.addEventListener('submit', function (event) {
+
 	// Al momento de SUBMITEAR el formulario iteramos los campos y validamos si están vacíos
 	formInputs.forEach(function (input) {
-		if (input.value.trim() === '') {
-			// Si el campo está vacío creamos dentro del objeto de errores una key con valor true
-			errorsObj[input.name] = true;
-			// Asiganmos la clase de CSS
-			input.classList.add('is-invalid');
-			// Mostramos el mensaje de error
-			input.nextElementSibling.innerHTML = 'El campo <b>' + input.getAttribute('dataname') + '</b> es obligatorio';
+		if (input.name !== 'state') {
+			if (input.value.trim() === '') {
+				// Si el campo está vacío creamos dentro del objeto de errores una key con valor true
+				errorsObj[input.name] = true;
+				// Asiganmos la clase de CSS
+				input.classList.add('is-invalid');
+				// Mostramos el mensaje de error
+				input.nextElementSibling.innerHTML = 'El campo <b>' + input.getAttribute('dataname') + '</b> es obligatorio';
+			}
+		} else  {
+			provincesSelect = input;
+			console.log(provincesSelect);
+		}
+
+		if (input.name === 'country') {
+			countryValue = input.options[input.selectedIndex].value;
+			if (countryValue == 'Argentina') {
+				var provinceSelected = provincesSelect.options[provincesSelect.selectedIndex].value;
+				if (provinceSelected == '') {
+					errorsObj.state = true;
+					provincesSelect.classList.add('is-invalid');
+				}
+			}
 		}
 	});
+
+	console.log(errorsObj);
 
 /* Debug de errores en Registro
 	console.log('Campos con errores:', errorsObj);

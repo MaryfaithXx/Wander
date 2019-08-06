@@ -140,38 +140,34 @@
 
 					<div class="col-12 col-md-6">
 						<h2 class="postTitle">Eventos</h2>
-
 						<ul class="timeline">
-						@foreach ($events as $event)
-						{{--@if ($event->users['event_id'] == Auth::user()->id)--}}
-							<div class="container mt-5 mb-5">
-								<div class="row">
-									<div class="col-md-6">
-										<ul class="timeline">
-											<li><img src="/storage/event-images/{{ $event['image'] }}" style="width: 200px"></li>
-											<h4><strong><a target="_blank" href="#">{{ $event['name'] }}</a></strong></h4>
-											<li> {{ $event['city'] }} - {{ $event['country'] }}
-											<span class="float-right">{{ $event['date'] }}</span></li>
-											<br>
-											<li> {{ $event['details'] }} </li>
-											<br>
-											<div class="col-12">
-												<form action="/events/{{ $event->id }}" method="post">
-												@csrf
-												{{ method_field('delete') }}
-												<a href="/events/{{ $event->id }}/edit"><i class="fas fa-pen-square" style="font-size:3em"></i></a>
-												<button type="submit" class="delete-icon"><i class="fas fa-trash" style="font-size:2.6em"></i></button>
-												</form>
-											</div>
-										</ul>
+						@foreach (Auth::user()->events as $event)
+								<div class="container mt-5 mb-5">
+									<div class="row">
+										<div class="col-md-6">
+											<ul class="timeline">
+												<li><img src="/storage/event-images/{{ $event['image'] }}" style="width: 200px"></li>
+												<h4><strong><a target="_blank" href="#">{{ $event['name'] }}</a></strong></h4>
+												<li> {{ $event['city'] }} - {{ $event['country'] }}
+												<span class="float-right">{{ $event['date'] }}</span></li>
+												<br>
+												<li> {{ $event['details'] }} </li>
+												<br>
+												<div class="col-12">
+													<form action="/events/{{ $event->id }}" method="post">
+													@csrf
+													{{ method_field('delete') }}
+													<a href="/events/{{ $event->id }}/edit"><i class="fas fa-pen-square" style="font-size:3em"></i></a>
+													<button type="submit" class="delete-icon"><i class="fas fa-trash" style="font-size:2.6em"></i></button>
+													</form>
+												</div>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
-							{{--@endif--}}
 						@endforeach
 						</ul>
 					</div>
-
 
 			<!--/Eventos-->
 

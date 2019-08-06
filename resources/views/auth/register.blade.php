@@ -18,7 +18,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre y apellido') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus
 								dataname = "Nombre y apellido">
 
 						<div class="invalid-feedback">
@@ -37,7 +37,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de usuario') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username"
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username"
 								dataname="Nombre de usuario">
 
 						<div class="invalid-feedback">
@@ -56,7 +56,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email"
 								dataname="Email">
 
 							<div class="invalid-feedback">
@@ -80,7 +80,7 @@
 										name="country"
 										id="country"
 										value="{{ old('country') }}"
-										required autocomplete="country"
+									 autocomplete="country"
 										dataname="País de nacimiento"
 										>
 									<option value="">Elegí un país</option>
@@ -108,7 +108,7 @@
 									name="state"
 									id="state"
 									value="{{ old('state') }}"
-									required autocomplete="state"
+								 autocomplete="state"
 									dataname="Provincia"
 									>
 									<option value="">Elegí una provincia</option>
@@ -132,7 +132,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password"
 								dataname="Contraseña">
 
 							<div class="invalid-feedback">
@@ -151,7 +151,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" dataname="confirmar contraseña">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" dataname="confirmar contraseña">
 
                                 <div class="invalid-feedback">
                   								Aquí va el error de la Contraseña
@@ -163,7 +163,7 @@
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Imagen de perfil') }}</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar" dataname="imagen">
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autocomplete="avatar" dataname="imagen">
 
                                 <div class="invalid-feedback">
                   								Aquí va el error de la Imagen

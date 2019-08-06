@@ -27,21 +27,21 @@
 						<br>
 						<br>
 						¡Pero la próxima historia la contas vos!</p>
-		  </div>   
+		  </div>
 		</div>
-		<div class="carousel-item">	
+		<div class="carousel-item">
 		  <img src="/images/aurora-borealis.jpg" alt="aurora">
 		  <div class="carousel-caption">
 			<h3>Encuentra eventos en tu próximo destino</h3>
 			<p>Busca eventos por ciudad o país y agrégalos a tu itinerario</p>
-		  </div>   
+		  </div>
 		</div>
 		<div class="carousel-item">
 		  <img src="/images/carnaval-bahia.jpg" alt="carnaval">
 		  <div class="carousel-caption">
 			<h3>Conecta con otros viajeros</h3>
 			<p>Crea un grupo de amigos previo a iniciar tu viaje</p>
-		  </div>   
+		  </div>
 		</div>
 	  </div>
 	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -51,7 +51,7 @@
 		<span class="carousel-control-next-icon"></span>
 	  </a>
 	</div>
-</div>	
+</div>
 		<!-- /carousel -->
 
 		<!-- search bar -->
@@ -128,8 +128,7 @@
 		</div>
 
 <!-- Contenido dinámico de featured events-->
-
-		<div class="row">		
+		<div class="row">
 		@foreach ($featuredEvent as $event)
 		<div class="col-6 col-md-3">
 			<img class="tile-image" src="/storage/event-images/{{ $event['image'] }}" alt="{{ $event['name'] }}">

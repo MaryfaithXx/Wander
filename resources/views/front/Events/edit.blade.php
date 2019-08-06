@@ -60,7 +60,7 @@
 				<div class="form-group">
 					<label><h5>Fecha y Hora<h5/></label>
 					<input
-						type="dateTime"
+						type="datetime-local"
 						name="date"
 						value="{{ old('date', $eventToEdit->date) }}"
 						class="form-control"
