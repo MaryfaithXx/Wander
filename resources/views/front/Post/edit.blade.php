@@ -6,7 +6,7 @@
 <div class="container">
 	<br>
 	<br>
-	<h2>Formulario para editar un Post  {{ $postToEdit->title}}</h2>
+	<h2>Edita el Post  {{ $postToEdit->title}}</h2>
 	<br>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))
@@ -65,6 +65,12 @@
 							{{ $errors->first('image') }}
 						</span>
 					@endif
+				</div>
+			</div>
+
+			<div class="col-6" style="display:none;">
+				<div class="form-group">
+				<input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
 				</div>
 			</div>
 

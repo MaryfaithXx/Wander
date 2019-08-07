@@ -106,7 +106,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-6 col-md-3">
 						<img class="tile-image" src="images/times-square-ball-drop.jpg" alt="times square ball drop">
 						<span class="tile-label">Año nuevo en Nueva York</span>
@@ -123,7 +123,7 @@
 						<img class="tile-image" src="images/cannes-film-festival.jpg" alt="cannes film festival">
 						<span class="tile-label">Festival de cine de Cannes</span>
 					</div>
-				</div>
+				</div> -->
 			</section>
 		</div>
 

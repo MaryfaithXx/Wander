@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Event;
 
+use App\User;
+
 class EventController extends Controller
 {
   /**
@@ -43,7 +45,7 @@ class EventController extends Controller
       // 1. Validamos
 		$request->validate([
 			// input_name => rules,
-			'name' => 'required | max:15',
+			'name' => 'required | max:25',
 			'details' => 'required',
 			'date' => 'required',
 			'city' => 'required',
@@ -89,6 +91,12 @@ class EventController extends Controller
 			$event->image = $finalImage;
 		}
 		$event->save();
+    //Buscamos al usuario logueado
+    $event->user_id = $request->input('user_id');
+
+    $event->users()->attach($event->user_id);
+
+
 		// 3. Redireccionamos SIEMPRE a una RUTA
 		return redirect('/events');
   }
@@ -176,11 +184,11 @@ class EventController extends Controller
     public function result(Request $request)
 		{
 			$searchWord = $request->word;
-			
+
 			$eventsResult = Event::where('city', 'LIKE', '%' . $request->word . '%')->orWhere('country','LIKE','%' .$request->word . '%')->get();
 			return view('front.events.result', compact('eventsResult', 'searchWord'));
 		}
-		
+
 	public function featured(Request $request)
 		{
 			$featuredEvent = Event::where('featured', 'LIKE', '%' . '1' . '%')->get();

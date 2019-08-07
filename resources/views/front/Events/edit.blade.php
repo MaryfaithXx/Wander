@@ -6,7 +6,7 @@
 <div class="container">
 	<br>
 	<br>
-	<h2>Formulario para editar el evento  {{ $eventToEdit->name }}</h2>
+	<h2>Edita el evento  {{ $eventToEdit->name }}</h2>
 	<br>
 	{{-- Errores si los hubiera --}}
 	@if (count($errors))

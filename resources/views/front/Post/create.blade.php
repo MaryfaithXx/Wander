@@ -6,7 +6,7 @@
 <div class="container">
 <br>
 <br>
-<h2>Formulario para crear un Post</h2>
+<h2>Crea un Post</h2>
 <br>
 {{-- Errores si los hubiera --}}
 @if (count($errors))

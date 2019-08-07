@@ -6,7 +6,7 @@
 <div class="container">
 	<br>
 	<br>
-<h2>Formulario para crear un evento</h2>
+<h2>Crea un evento</h2>
 <br>
 {{-- Errores si los hubiera --}}
 @if (count($errors))
@@ -120,6 +120,13 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="col-6" style="display:none;">
+		<div class="form-group">
+		<input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id }}">
+		</div>
+	</div>
+
 	<div class="col-12">
 		<button type="submit" class="btn-btn-success">ENVIAR</button>
 	</div>

@@ -82,11 +82,11 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'country' => $data['country'],
-			'state' => $data['state'],
+			      'state' => $data['state'],
             'password' => Hash::make($data['password']),
             'avatar' => $profileImageName
 		]);
-		
+
 		Profile::create([
 			'user_id' => $user->id,
 			'location' => null,
@@ -94,7 +94,7 @@ class RegisterController extends Controller
 			'languages_spoken' => null,
 			'cover_image' => null,
         ]);
-		
+
 		return $user;
     }
 }
